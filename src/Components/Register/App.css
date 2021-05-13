@@ -1,0 +1,69 @@
+.App {
+  width: 1170px;
+  margin: auto;
+  height: 2000px;
+}
+
+.App-header {
+  height: 101px;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  background-color: aqua;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  align-items: center;
+  display: flex;
+}
+
+.list {
+  display: inline-block;
+  padding-left: 30px;
+  align-items: center;
+}
+
+.App-body {
+  margin-top: 122px;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-box {
+  width: 370px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-shadow: 0 0 40px 20px rgba(0, 0, 0, 0.26);
+}
+
+.box-input {
+  width: 100%;
+  border: 1px solid #000;
+  margin: 6px 0;
+  height: 48px;
+  border-radius: 5px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border-color: #c4c4c4;
+  margin-bottom: 32px;
+}
+
+.box-register {
+  background-color: #ffa62b;
+  width: 100%;
+  border: 1px solid #000;
+  margin: 6px 0;
+  height: 48px;
+  border-radius: 5px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}

@@ -1,0 +1,81 @@
+.container-profile{
+    display: flex;
+    flex-direction: row;
+    height: 800px;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-profile{
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(200px , 1fr));
+    grid-template-rows: 1;
+    border: 1px solid rgb(199, 65, 65);
+    
+}
+
+.profile-img{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid black;
+    flex: 1;
+
+}
+
+.profile-edit{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.profile{
+    border: 1px solid aqua;
+    padding: 20px;
+}
+
+.kontak{
+    border: 1px solid aqua;
+    padding: 20px;
+}
+
+.text-profile{
+    font-weight: 600;
+
+}
+
+.text-kontak{
+    font-weight: 600;
+}
+
+.gap{
+    margin-bottom: 15px;
+}
+
+.input-profile{
+    border: 1px solid grey ;
+    height: 30px;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+
+.gender{
+    margin-right: 8px;
+}
+
+#alamat{
+    width: 100%;
+    height: 70px;
+    border-radius: 8px;
+}
+.save{
+    padding: 12px;
+    background-color: #FFA62B;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+}

@@ -1,0 +1,97 @@
+.App {
+  width: 1170px;
+  margin: auto;
+}
+
+.container-cart{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  
+}
+
+.main-cart{
+  width: 70%;
+  
+}
+
+.cart-page {
+  margin: 80px auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.border-top {
+  border-top: 3px solid #ffa62b;
+}
+
+th {
+  text-align: left;
+  padding: 5px;
+}
+
+td {
+  padding: 10px 5px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+td input {
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
+
+td a {
+  color: #ffa62b;
+}
+
+td img {
+  width: 170px;
+  height: 170px;
+  margin-right: 10px;
+}
+
+.total-price {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.total-price table {
+  border-top: 3px solid #ffa62b;
+  width: 100%;
+  max-width: 468px;
+}
+
+td:last-child {
+  text-align: right;
+}
+th:last-child {
+  text-align: right;
+}
+
+.total-price button {
+  width: 100%;
+  letter-spacing: 2px;
+  margin: 30px 0;
+  max-width: 468px;
+  height: 48px;
+  background-color: #ffa62b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 20px;
+}

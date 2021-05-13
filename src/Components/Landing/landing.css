@@ -1,0 +1,77 @@
+.slick-arrow{
+    background-color: rgb(87, 85, 85);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: black;
+    
+    }
+    
+    .slick-arrow:hover{
+      background-color: black;
+    }
+    
+    
+    .slick-prev {
+      left: -10px !important;
+      z-index: 100;
+    }
+    .slick-next {
+      right: -10px !important;
+      z-index: 100;
+    }
+    .test{
+      background-color: greenyellow;
+    }
+
+.containerlanding{
+    width : 100% ;
+    margin-top : 30px ; 
+   
+    height : 400px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1200px;
+}
+
+.body-landing{
+    width : 70%;
+     
+}
+.main{
+    margin-top : 30px ; 
+   
+} 
+.titlemain{
+    text-align : center;
+    font-weight : 600 ;
+}
+.fiture {
+    height : 100% ; 
+    
+}
+.items{
+    position : absolute; 
+    left : 0 ;
+    bottom : 0 ;
+    background-color : white;
+    padding : 10px;
+}
+
+.product{
+    margin-top: 40px;
+}
+.list-product{
+    margin-top: 30px;
+}
+
+.productitle{
+    text-align: center;
+    font-weight: 600;
+}
+
+.info{
+    text-align: center;
+    font-size: 13px;
+}
