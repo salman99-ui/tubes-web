@@ -16,8 +16,11 @@ function Index() {
             email , name
         }
 
-        Axios.post("http://localhost:4000/auth/check" , data2).then(result => {
-            console.log(result.data)
+        Axios.post("http://localhost:4000/auth/googlelogin" , data2).then(result => {
+            
+            localStorage.setItem('token' , result.data.token)
+
+            history.replace('/home')
         })
     }
     const initialvalues = {email : '' , password : ''}
@@ -34,6 +37,8 @@ function Index() {
                 setErr(result.data.message)
             }
         })
+
+        console.log(values)
     }
     const classes = Login()
 
@@ -54,24 +59,28 @@ function Index() {
                         <label htmlFor="email">Email</label>
                         <Field type="text" id="email" className={classes.input} name="email"/>
                         <ErrorMessage name="email" className={classes.error}>
-                            {msg => <p style={{color : 'red'}}> {msg}</p>}
+                            {msg => <p style={{color : 'red'  , margin : 0}}> {msg}</p>}
                         </ErrorMessage>
 
                         <label htmlFor="password">Password</label>
                         <Field type="password" id="password" className={classes.input} name="password" />
                         <ErrorMessage name="password" className={classes.error}>
-                            {msg => <p style={{color : 'red'}}> {msg}</p>}
+                            {msg => <p style={{color : 'red' , margin : 0}}> {msg}</p>}
                         </ErrorMessage>
 
                         <p className={classes.forgot}><a href="">Forgot Password ?</a></p>
                         <button className={classes.login}>Login</button>
-                        <GoogleLogin 
+                        
+                        </Form>
+                    </Formik>
+
+                    <div className={classes.google}>
+                            <GoogleLogin 
                             clientId="897389787521-pqme3iu23edjqdsobd2h6a0uiel4bcvq.apps.googleusercontent.com"
                             onSuccess={response}
                             onFailure={response}
                         />
-                        </Form>
-                    </Formik>
+                    </div>
                 </div>
             </div>
         </div>

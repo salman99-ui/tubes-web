@@ -50,6 +50,13 @@ const Login = makeStyles({
     texterror : {
         textAlign : 'center' ,
         color : 'red'
+    } ,
+
+    google : {
+        display : 'flex' ,
+        flexDirection : 'row' ,
+        justifyContent : 'center' ,
+        marginTop : 20
     }
 })
 

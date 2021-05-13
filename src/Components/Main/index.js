@@ -1,5 +1,5 @@
-import React from 'react'
-import {BrowserRouter as Router , Route , Switch , Link} from 'react-router-dom'
+import React , {useEffect}from 'react'
+import {BrowserRouter as Router , Route , Switch , useHistory} from 'react-router-dom'
 import Header from '../Header'
 import Landing from '../Landing'
 import Footer from '../Footer'
@@ -8,7 +8,16 @@ import Profile from '../Profile'
 import Cart from '../Cart'
 import Catalog from '../Catalogue'
 import './main.css'
-function index() {
+function Index() {
+    const history = useHistory()
+    useEffect(() => {
+        let token = localStorage.getItem('token')
+        if(token != null){
+             history.replace('/home')
+            }else{
+                history.replace('/login')
+            }
+    } , [])
     return (
         <div className="container-main">
            
@@ -33,4 +42,4 @@ function index() {
     )
 }
 
-export default index
+export default Index

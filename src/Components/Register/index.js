@@ -2,12 +2,19 @@ import React , {useState , useEffect} from 'react'
 import Axios from 'axios'
 import * as Yup from 'yup'
 import {Formik , Form , Field , ErrorMessage} from 'formik'
+import {GoogleLogin} from 'react-google-login'
 import {useHistory} from 'react-router-dom'
 import "./App.css";
 
+
+
 function App() {
 
+  const response = (data) => {
+    const {email , name } = data.profileObj 
 
+    console.log({email , name })
+  }
   const [ error , setErr] = useState('')
     const history = useHistory()
 
@@ -91,6 +98,14 @@ function App() {
             <input type="submit" value="register" className="box-register" />
             </Form>
           </Formik>
+
+          <div className="google">
+            <GoogleLogin 
+              clientId="897389787521-pqme3iu23edjqdsobd2h6a0uiel4bcvq.apps.googleusercontent.com"
+              onSuccess={response}
+              onFailure={response}
+                        />
+          </div>
         </div>
       </body>
       <footer className="App-footer"></footer>
