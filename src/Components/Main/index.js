@@ -27,7 +27,7 @@ function Index() {
                 <Switch>
                     <Route path="/home"  component={Landing} exact/>
                     <Route path="/home/profile" component={Profile} />
-                    <Route path="/home/catalog/:name" component={Catalog} />
+                    <Route path="/home/catalog/:name" component={Catalog} exact/>
                     <Route path="/home/detail/:id" component={Detail} />
                     <Route path="/home/cart" component={Cart} />
                     

@@ -1,19 +1,15 @@
-import React from 'react'
+import React , {useEffect , useState} from 'react'
 import {useParams} from 'react-router-dom'
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"
-import toko from '../../assets/img/toko.jpg'
-import './catalog.css'
+import Axios from 'axios'
+import './catalog.scss'
+
 function Index() {
     let {name} = useParams()
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 1
-      };
+    const [Data , setData] = useState([])
+    useEffect(() => {
+        Axios.get('http://localhost:4000/data/ruangtamu').then( result => {
+            setData(result.data.data)
+        })} , [])
 
     return (
         <div className="container-catalog">
@@ -22,52 +18,21 @@ function Index() {
                 
             
             <div className="main-catalog">
-                
-                <div className="catalog">
-                    <Slider {...settings}>
-                        <div className="card">
-                            <img src={toko} className="card-img" />
-                            <p>Deskripsi</p>
-                            <p>loreasas csdss</p>
-                        </div>
+                {
+                    Data.map((item , index) => (
+                        <div className="card" key={index}>
+                            <div className="card-img">
+                                <img src={item.linksImg} className="img-card"/>
+                            </div>
 
-                        <div className="card">
-                            <img src={toko} className="card-img" />
-                            <p>Deskripsi</p>
-                            <p>loreasas csdss</p>
+                            <div className="card-detail">
+                                <p className="name">{item.Name}</p>
+                                <p className="price">Rp.{item.Price}</p>
+                            </div>
                         </div>
-
-                        <div className="card">
-                            <img src={toko} className="card-img" />
-                            <p>Deskripsi</p>
-                            <p>loreasas csdss</p>
-                        </div>
-
-                        <div className="card">
-                            <img src={toko} className="card-img" />
-                            <p>Deskripsi</p>
-                            <p>loreasas csdss</p>
-                        </div>
-
-                        <div className="card">
-                            <img src={toko} className="card-img" />
-                            <p>Deskripsi</p>
-                            <p>loreasas csdss</p>
-                        </div>
-
-                        <div className="card">
-                            <img src={toko} className="card-img" />
-                            <p>Deskripsi</p>
-                            <p>loreasas csdss</p>
-                        </div>
-
-                        <div className="card">
-                            <img src={toko} className="card-img" />
-                            <p>Deskripsi</p>
-                            <p>loreasas csdss</p>
-                        </div>
-                    </Slider>
-                </div>
+                    ))
+                }
+               
             </div>
             </div>
         </div>

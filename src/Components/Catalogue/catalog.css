@@ -1,40 +1,4 @@
-.slick-arrow{
-    background-color: rgb(87, 85, 85);
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    color: black;
-    
-    }
-    
-    
-    .slick-arrow:hover{
-      background-color: black;
-    }
-    
-    
-    .slick-prev {
-      left: -10px !important;
-      z-index: 100;
-    }
-    .slick-next {
-      right: -10px !important;
-      z-index: 100;
-    }
 
-.container-catalog{
-    width: 100%;
-    
-}
-
-.main-catalog{
-    width: 70%;
-    height: 240px;
-   display: flex;
-    flex-direction: row;
-    
-    border: 1px solid red;
-}
 
 .identitas{
     width: 100%;
@@ -45,25 +9,25 @@
     border: 1px solid black;
 }
 
-.card-info{
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border: 1px solid yellow;
-
+.main-catalog{
+  display: grid;
+  grid-template-columns: repeat(auto-fit , minmax(15em , 1fr));
+  grid-gap: 6px;
+  width: 70%;
 }
 
 .card{
-    width: 100px ;
-    height: auto;
-    
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: column;
 }
-.catalog{
+
+.img-card{
   width: 100%;
-    border: 1px solid blue;
+  height: 300px;
 }
 
 .card-img{
-    height: 100px;
-    width: 96%;
+  border: 1px solid red;
 }
+

@@ -12,8 +12,10 @@ function App() {
 
   const response = (data) => {
     const {email , name } = data.profileObj 
-
-    console.log({email , name })
+    const data2 = {email , name }
+    Axios.post('http://localhost:4000/auth/googleregister' , data2).then( result => {
+      console.log(result.data)
+    })
   }
   const [ error , setErr] = useState('')
     const history = useHistory()
