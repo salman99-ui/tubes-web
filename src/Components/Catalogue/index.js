@@ -7,7 +7,7 @@ function Index() {
     let {name} = useParams()
     const [Data , setData] = useState([])
     useEffect(() => {
-        Axios.get('http://localhost:4000/data/ruangtamu').then( result => {
+        Axios.get(`http://localhost:4000/data/${name}`).then( result => {
             setData(result.data.data)
         })} , [])
 
@@ -27,7 +27,10 @@ function Index() {
 
                             <div className="card-detail">
                                 <p className="name">{item.Name}</p>
-                                <p className="price">Rp.{item.Price}</p>
+                                <p className="price">Rp.{item.Price.toFixed(2)}</p>
+                                <span className="describe" >{item.Describe}</span>
+
+                                <button className="buttonbuy">Buy</button>
                             </div>
                         </div>
                     ))

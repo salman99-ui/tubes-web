@@ -17,10 +17,13 @@ function Index() {
         }
 
         Axios.post("http://localhost:4000/auth/googlelogin" , data2).then(result => {
-            
+            if(result.status == 201){
             localStorage.setItem('token' , result.data.token)
 
-            history.replace('/home')
+            history.push('/home')
+            }else{
+                history.replace('/login')
+            }
         })
     }
     const initialvalues = {email : '' , password : ''}

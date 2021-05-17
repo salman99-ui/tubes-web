@@ -38,7 +38,7 @@ export default class MultipleItems extends Component {
             <Grid container spacing={2} >
               <Grid container item xs={12} wrap="wrap" spacing={2}>
                 <Grid item xs={8}>
-                <a href="/home/catalog/tamu">
+                <a href="/home/catalog/ruangtamu">
                   <div style={{backgroundImage : `url(${livingroom})` , height : 300 , backgroundSize : 'cover' ,position : 'relative' , backgroundPosition : 'center'}}>
                     <div className="items">
                         Ruang Tamu
@@ -49,7 +49,7 @@ export default class MultipleItems extends Component {
                 </Grid>
                 
                 <Grid item xs={4}>
-                <a href="/home/catalog/tidur">
+                <a href="/home/catalog/ruangtidur">
                 <div style={{backgroundImage : `url(${bedroom})` , height : 300 , backgroundSize : 'cover' , position : 'relative' , backgroundPosition : 'center'}}>
                   <div className="items">
                         Ruang Tidur
@@ -61,10 +61,10 @@ export default class MultipleItems extends Component {
 
               <Grid container item xs={12} wrap="wrap" spacing={2}>
               <Grid item xs={4}>
-              <a href="/home/catalog/kerja">
+              <a href="/home/catalog/dekors">
                 <div style={{backgroundImage : `url(${workingroom})` , height : 300 , backgroundSize : 'cover' , position : 'relative' ,backgroundPosition : 'center'}}>
                     <div className="items">
-                      Ruang Kerja
+                      Ruang Dekors
                     </div>
                   </div>
                   </a>
