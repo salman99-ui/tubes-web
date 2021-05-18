@@ -1,8 +1,12 @@
 import React from 'react'
 import Appss from './Router'
+import {Provider} from 'react-redux'
+import Store from './redux/cart/store'
 function App() {
   return (
-    <Appss />
+    <Provider store={Store}>
+      <Appss />
+    </Provider>
   )
 }
 

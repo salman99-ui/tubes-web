@@ -20,24 +20,35 @@ function Index() {
     } , [])
     return (
         <div className="container-main">
-           
+           <Router>
             <Header />
             <div className="body-main">
-            <Router>
+            
                 <Switch>
-                    <Route path="/home"  component={Landing} exact/>
-                    <Route path="/home/profile" component={Profile} />
-                    <Route path="/home/catalog/:name" component={Catalog} exact/>
+                    <Route path="/home" exact>
+                        <Landing />
+                    </Route>
+                    <Route path="/home/profile"  >
+                        <Profile />
+                    </Route>
+                    <Route path="/home/catalog/:name"exact>
+                        <Catalog />
+                    </Route>
                     <Route path="/home/detail/:id" component={Detail} />
-                    <Route path="/home/cart" component={Cart} />
+                    <Route path="/home/cart">
+                        <Cart />
+                    </Route>
+                    <Route path="/home/cart">
+                        <Cart />
+                    </Route>
                     
                 </Switch>
-            </Router>
+           
             </div>
 
             <Footer />
 
-            
+            </Router>
         </div>
     )
 }

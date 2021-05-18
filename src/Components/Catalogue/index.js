@@ -2,10 +2,13 @@ import React , {useEffect , useState} from 'react'
 import {useParams} from 'react-router-dom'
 import Axios from 'axios'
 import './catalog.scss'
-
+import {useDispatch , useSelector} from 'react-redux'
+import {Add} from '../../redux/cart/action'
 function Index() {
     let {name} = useParams()
     const [Data , setData] = useState([])
+    const data = useSelector(state => state.data)
+    const dispatch = useDispatch()
     useEffect(() => {
         Axios.get(`http://localhost:4000/data/${name}`).then( result => {
             setData(result.data.data)
@@ -30,12 +33,13 @@ function Index() {
                                 <p className="price">Rp.{item.Price.toFixed(2)}</p>
                                 <span className="describe" >{item.Describe}</span>
 
-                                <button className="buttonbuy">Buy</button>
+                                <button className="buttonbuy" 
+                                onClick={() => dispatch(Add({name : item.Name , describe : item.Describe , price : item.Price , linksImg : item.linksImg }))}>Buy</button>
                             </div>
                         </div>
                     ))
                 }
-               
+               {JSON.stringify(data)}
             </div>
             </div>
         </div>

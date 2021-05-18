@@ -1,6 +1,8 @@
 import React from 'react';
 import './cart.css'
+import {useSelector} from 'react-redux'
 export default function Cart() {
+  const Data = useSelector( state => state.data)
   return (
     <main>
       <div className="container-cart">
@@ -11,48 +13,31 @@ export default function Cart() {
             <th>Jumlah</th>
             <th>Subtotal</th>
           </tr>
-          <tr className='border-top'>
-            <td>
-              <div className='cart-info'>
-                <img
-                  src={
-                    'https://images.unsplash.com/photo-1581428982868-e410dd047a90?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
-                  }
-                />
-                <div>
-                  <p className='title'>Your Table</p>
-                  <small className='title'>Rp. 2.000.000</small>
-                  <br />
-                  <a>Hapus</a>
-                </div>
-              </div>
-            </td>
-            <td>
-              <input type='number' value='1' />
-            </td>
-            <td>Rp. 2.000.000</td>
-          </tr>
-          <tr className='border-top'>
-            <td>
-              <div className='cart-info'>
-                <img
-                  src={
-                    'https://images.unsplash.com/photo-1581428982868-e410dd047a90?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'
-                  }
-                />
-                <div>
-                  <p className='title'>Your Table</p>
-                  <small className='title'>Rp. 2.000.000</small>
-                  <br />
-                  <a>Hapus</a>
-                </div>
-              </div>
-            </td>
-            <td>
-              <input type='number' value='1' />
-            </td>
-            <td>Rp. 2.000.000</td>
-          </tr>
+          { Data.map((item , index) => (
+             <tr className='border-top' key={index}>
+             <td>
+               <div className='cart-info'>
+                 <img
+                   src={
+                     item.linksImg
+                   }
+                 />
+                 <div>
+                   <p className='title'>{item.name}</p>
+                   <small className='title price'>Rp. {item.price}</small>
+                   <br />
+                   <a>Hapus</a>
+                 </div>
+               </div>
+             </td>
+             <td>
+               <input type='number' value='1' />
+             </td>
+             <td>Rp. 2.000.000</td>
+           </tr>
+          ))
+         
+          }
         </table>
         <div className='total-price'>
           <table>
@@ -65,6 +50,8 @@ export default function Cart() {
             <button>Bayar</button>
           </table>
         </div>
+        
+        
       </div>
       </div>
     </main>
