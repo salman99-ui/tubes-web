@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 function Index() {
     const clasess = Header()
-    const quantity = useSelector(state => state.quantity)
+    const quantity = useSelector(state => state.cart.quantity)
     return (
         <div className={clasess.header}>
             <div className={clasess.navbar}>

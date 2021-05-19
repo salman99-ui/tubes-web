@@ -1,23 +1,21 @@
+const Order = (price) => {
+    return{
+        type : "Order" ,
+        price : price ,
+        
+    }
+}
 
-const Add = (data) => {
+const AddOrder = (data) => {
     return {
-        type : "Add" ,
+        type : "AddOrder" ,
         payload : {
             name : data.name ,
-            describe : data.describe ,
             price : data.price ,
             linksImg : data.linksImg ,
             quantity : data.quantity
-           
         }
+
     }
 }
-
-const Delete = () => {
-    return{
-
-        type : "Delete" 
-    }
-}
-
-export {Add , Delete}
+export {Order , AddOrder}

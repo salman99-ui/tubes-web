@@ -7,7 +7,8 @@ import {Add} from '../../redux/cart/action'
 function Index() {
     let {name} = useParams()
     const [Data , setData] = useState([])
-    const data = useSelector(state => state.data)
+    const data = useSelector(state => state.cart.data)
+    const saldo = useSelector(state => state.wallet.saldo)
     const dispatch = useDispatch()
     useEffect(() => {
         Axios.get(`http://localhost:4000/data/${name}`).then( result => {
@@ -40,6 +41,7 @@ function Index() {
                     ))
                 }
                {JSON.stringify(data)}
+               {"Saldo : " , saldo}
             </div>
             </div>
         </div>

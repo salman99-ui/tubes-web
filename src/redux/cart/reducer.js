@@ -18,6 +18,13 @@ const reducer = (state = initialvalues , action) => {
                      total_price : state.total_price + action.payload.price
                     
                     }
+        case "Delete" : 
+            return {
+                quantity : 0 ,
+                data : [] ,
+                total_price : 0 ,
+                
+            }
         default :
          return state 
     }
