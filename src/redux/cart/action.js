@@ -6,7 +6,8 @@ const Add = (data) => {
             name : data.name ,
             describe : data.describe ,
             price : data.price ,
-            linksImg : data.linksImg
+            linksImg : data.linksImg ,
+            quantity : data.quantity
            
         }
     }

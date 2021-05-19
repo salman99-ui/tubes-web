@@ -7,6 +7,7 @@ import Detail from '../Detail'
 import Profile from '../Profile'
 import Cart from '../Cart'
 import Catalog from '../Catalogue'
+import Order from '../Order'
 import './main.css'
 function Index() {
     const history = useHistory()
@@ -38,8 +39,8 @@ function Index() {
                     <Route path="/home/cart">
                         <Cart />
                     </Route>
-                    <Route path="/home/cart">
-                        <Cart />
+                    <Route path="/home/order">
+                        <Order />
                     </Route>
                     
                 </Switch>

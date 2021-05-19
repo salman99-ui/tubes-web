@@ -3,6 +3,7 @@ import './cart.css'
 import {useSelector} from 'react-redux'
 export default function Cart() {
   const Data = useSelector( state => state.data)
+  const total = useSelector( state => state.total_price)
   return (
     <main>
       <div className="container-cart">
@@ -31,9 +32,9 @@ export default function Cart() {
                </div>
              </td>
              <td>
-               <input type='number' value='1' />
+               <input type='number' value={1} onChange={e => console.log(e.target.value)}/>
              </td>
-             <td>Rp. 2.000.000</td>
+             <td>{item.price}</td>
            </tr>
           ))
          
@@ -44,7 +45,7 @@ export default function Cart() {
             <tr>
               <td>Harga Total</td>
               <td style={{ color: '#FFA62B', fontWeight: 'bold' }}>
-                Rp. 4.000.000
+                Rp.{total}
               </td>
             </tr>
             <button>Bayar</button>

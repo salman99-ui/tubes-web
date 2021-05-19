@@ -34,7 +34,7 @@ function Index() {
                                 <span className="describe" >{item.Describe}</span>
 
                                 <button className="buttonbuy" 
-                                onClick={() => dispatch(Add({name : item.Name , describe : item.Describe , price : item.Price , linksImg : item.linksImg }))}>Buy</button>
+                                onClick={() => dispatch(Add({name : item.Name , describe : item.Describe , price : item.Price , linksImg : item.linksImg , quantity : 1 }))}>Buy</button>
                             </div>
                         </div>
                     ))

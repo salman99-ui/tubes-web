@@ -3,9 +3,10 @@ import {Header} from '../../Global/Styles'
 import User from '../../assets/img/user.png'
 import Cart from '../../assets/img/cart.png'
 import {Link} from 'react-router-dom'
-import classes from '../../Global/Styles/Header'
+import {useSelector} from 'react-redux'
 function Index() {
     const clasess = Header()
+    const quantity = useSelector(state => state.quantity)
     return (
         <div className={clasess.header}>
             <div className={clasess.navbar}>
@@ -19,7 +20,7 @@ function Index() {
                 <div className={clasess.menu}>
                     <input type="search" style={{padding : 5}} className={clasess.link} placeholder="Search" />
                     <Link to="/home/profile" className={clasess.link}><img src={User} /></Link>
-                    <Link to="/home/cart" className={clasess.link}><img src={Cart} /><span className={clasess.usertest}>1</span></Link>
+                    <Link to="/home/cart" className={clasess.link}><img src={Cart} /><span className={( quantity == 0 ? null : clasess.usertest)}>{quantity == 0 ? null : quantity}</span></Link>
                 </div>
             </div>
         </div>

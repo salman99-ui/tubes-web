@@ -1,0 +1,73 @@
+.container-root{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    
+    .order-container{
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        width: 70%;
+        border: 1px solid red;
+
+        .info{
+            padding: 10px;
+            border: 1px solid blue;
+
+            .identity{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .order-produk{
+            padding: 8px 12px;
+            border: 1px solid orange;
+
+            .card-produk{
+                display: flex;
+                flex-direction: column;
+
+                .card-detail{
+                    display: flex;
+                    flex-direction: row;
+                    
+                    .detail{
+                        flex: 1;
+                        display: flex;
+                        flex-direction: row;
+                        
+                        .detail-info{
+                            margin-left: 20px;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                    }
+
+                    .detail-pembayaran{
+                        padding: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-end;
+                        width: 200px;
+                        
+
+                        .price-order{
+                            color: orange;
+                            font-weight: 600;
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .card-transaction{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    color: orange;
+                }
+            }
+        }
+    }
+}
