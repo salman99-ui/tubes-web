@@ -5,22 +5,28 @@ import Axios from 'axios'
 import * as Yup from 'yup'
 import {Formik , Form , Field , ErrorMessage} from 'formik'
 import {useHistory} from 'react-router-dom'
-
+import {User} from '../../redux/user/action'
+import {useDispatch} from 'react-redux'
 function Index() {
     
     const [ error , setErr] = useState('')
     const history = useHistory()
+    const dispatch = useDispatch()
+
     const response = (data) => {
-        const {email , name} = data.profileObj
+        const {email , name , imageUrl } = data.profileObj
         const data2 = {
             email , name
         }
 
         Axios.post("http://localhost:4000/auth/googlelogin" , data2).then(result => {
             if(result.status == 201){
-            localStorage.setItem('token' , result.data.token)
 
+            localStorage.setItem('token' , result.data.token)
+            dispatch(User({name : name , img : imageUrl }))
             history.push('/home')
+            console.log()
+
             }else{
                 history.replace('/login')
             }

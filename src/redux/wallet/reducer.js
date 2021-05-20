@@ -1,5 +1,5 @@
 const initialValues = {
-    saldo : 19000000000 ,
+    saldo : 19000000 ,
     last_transaction : []
 }
 

@@ -18,6 +18,27 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
+                .name-order{
+                    font-size: 16px;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .detail-saldo{
+                .saldo-header{
+                    font-size: 16px;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                }
+
+                .saldo{
+                    font-size: 13px;
+                    font-weight: 700;
+                    color: orange;
+                    letter-spacing: 1px;
+                }
             }
         }
 
@@ -42,6 +63,12 @@
                             margin-left: 20px;
                             display: flex;
                             flex-direction: column;
+
+                            .item {
+                                font-size: 15px;
+                                font-weight: 700;
+                                
+                            }
                         }
                     }
 
