@@ -4,7 +4,7 @@ import {Login} from '../../Global/Styles'
 import Axios from 'axios'
 import * as Yup from 'yup'
 import {Formik , Form , Field , ErrorMessage} from 'formik'
-import {useHistory} from 'react-router-dom'
+import {useHistory , Link} from 'react-router-dom'
 import {User} from '../../redux/user/action'
 import {useDispatch} from 'react-redux'
 function Index() {
@@ -76,8 +76,8 @@ function Index() {
                         <ErrorMessage name="password" className={classes.error}>
                             {msg => <p style={{color : 'red' , margin : 0}}> {msg}</p>}
                         </ErrorMessage>
-
-                        <p className={classes.forgot}><a href="">Forgot Password ?</a></p>
+                        <p style={{float : 'left'}}><Link to="/register">Dont have account?</Link></p>
+                        <p className={classes.forgot}><Link to="">Forgot Password ?</Link></p>
                         <button className={classes.login}>Login</button>
                         
                         </Form>

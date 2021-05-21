@@ -98,4 +98,5 @@ th:last-child {
 
 .price{
   color: orange;
+  border: none;
 }

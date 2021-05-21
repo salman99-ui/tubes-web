@@ -11,7 +11,7 @@ function Index() {
         <div className={clasess.header}>
             <div className={clasess.navbar}>
                 <div className={clasess.action}>
-                    <h2 style={{display : 'inline-block' , marginRight : 14}}><a style={{color : '#FFA62B'}} href="">Furn.</a></h2>
+                    <h2 style={{display : 'inline-block' , marginRight : 14}}><Link style={{color : '#FFA62B'}} to="/home">Furn.</Link></h2>
                     <Link to="/home/catalog/dekors" className={clasess.link}>Ruang Dekors</Link>
                     <Link to="/home/catalog/ruangtamu" className={clasess.link}>Ruang Tamu</Link>
                     <Link to="/home/catalog/ruangtidur" className={clasess.link}>Kamar Tidur</Link>

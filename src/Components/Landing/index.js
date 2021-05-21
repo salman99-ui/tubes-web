@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect , useState } from "react";
 import {Grid , Card , CardMedia , CardContent} from '@material-ui/core'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,9 +9,20 @@ import bedroom from '../../assets/img/bedroom.jpg'
 import livingroom from '../../assets/img/livingroom.jpg'
 import workingroom from '../../assets/img/workingroom.jpg'
 import dinningroom from '../../assets/img/dinningroom.jpg'
+import axios from 'axios'
 import './landing.css'
-export default class MultipleItems extends Component {
-  render() {
+import {useDispatch } from 'react-redux'
+import {Add} from '../../redux/cart/action'
+
+function MultipleItems(){
+    const [Data , setData] = useState([])
+    const dispatch = useDispatch()
+
+    useEffect( () => {
+      axios.get("http://localhost:4000/data/dekors").then( result => {
+        setData(result.data.data)
+      })
+    }, [])
     const settings = {
       dots: true,
       infinite: true,
@@ -85,21 +96,24 @@ export default class MultipleItems extends Component {
           </div>
         </div>
 
-        <div className="product">
+        <div className="product2">
           <h2 className="productitle">New Products</h2>
-          <p className="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci, quisque nulla odio faucibus laoreet lacus, .<br></br></p>  
-          
+                    
           <div className="list-product">
             <Grid container >
               <Grid container item xs={12} spacing={2} justify="center">
                 <Grid item xs={3}>
                     <Card>
                       <CardMedia>
-                        <img src={toko} height="130" />
+                        <img src="https://i.ibb.co/0FrJGc7/lampu-lantai.jpg" height="200" width="100%"/>
                       </CardMedia>
                       <CardContent>
-                        <h3>Hello</h3>
-                        <p>Hello</p>
+                        <h3>Lampu Lantai</h3>
+                        <p className="price">Rp.180000</p>
+                        <span>terbuat dari bahan polyester canvas dan rangka kayu pilihan, sehingga kuat dan kokoh</span>
+                        <button className="buttoncart" onClick={() => dispatch(Add({name : "Lampu Lantai" , describe : "terbuat dari bahan polyester canvas" , price : 180000 , linksImg : "https://i.ibb.co/0FrJGc7/lampu-lantai.jpg" , quantity : 1 }))}>
+                          Add to Cart
+                        </button>
                       </CardContent>
                     </Card>
                 </Grid>
@@ -107,11 +121,13 @@ export default class MultipleItems extends Component {
                 <Grid item xs={3}>
                     <Card>
                       <CardMedia>
-                        <img src={toko} height="130" />
+                        <img src="https://i.ibb.co/bKhfrWs/lampu-gantung.jpg"  height="200" width="100%" />
                       </CardMedia>
                       <CardContent>
-                        <h3>Hello</h3>
-                        <p>Hello</p>
+                        <h3>Lampu Gantung</h3>
+                        <p className="price">Rp.160000</p>
+                        <span>terbuat dari bahan polyester canvas dan rangka kayu pilihan, sehingga kuat dan kokoh</span>
+                        <button className="buttoncart" onClick={() => dispatch(Add({name : "Lampu Gantung" , describe : "terbuat dari bahan polyester canvas" , price : 160000 , linksImg : "https://i.ibb.co/bKhfrWs/lampu-gantung.jpg" , quantity : 1 }))}>Add to Cart</button>
                       </CardContent>
                     </Card>
                 </Grid>
@@ -119,11 +135,13 @@ export default class MultipleItems extends Component {
                 <Grid item xs={3}>
                     <Card>
                       <CardMedia>
-                        <img src={toko} height="130" />
+                        <img src="https://i.ibb.co/hBqBWW4/lampu-lantai-hiasan.jpg" height="200" width="100%"/>
                       </CardMedia>
                       <CardContent>
-                        <h3>Hello</h3>
-                        <p>Hello</p>
+                        <h3>Lampu Hiasan</h3>
+                        <p className="price">Rp.150000</p>
+                        <span>terbuat dari bahan polyester canvas dan rangka kayu pilihan, sehingga kuat dan kokoh</span>
+                        <button className="buttoncart" onClick={() => dispatch(Add({name : "Lampu Hiasan" , describe : "terbuat dari bahan polyester canvas" , price : 150000 , linksImg : "https://i.ibb.co/hBqBWW4/lampu-lantai-hiasan.jpg" , quantity : 1 }))} >Add to Cart</button>
                       </CardContent>
                     </Card>
                 </Grid>
@@ -138,4 +156,4 @@ export default class MultipleItems extends Component {
       </div>
     );
   }
-}
+export default MultipleItems

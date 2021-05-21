@@ -35,7 +35,7 @@
 .container{
     width : 100% ;
     margin-top : 30px ; 
-    border : 2px solid red ;
+   
     height : 300px ;
     display: flex;
     flex-direction: row;
@@ -44,7 +44,7 @@
 
 .body-room{
     width : 70%;
-     border : 1px solid black ;
+    
 }
 .card{
     padding : 20 ;

@@ -2,14 +2,13 @@ import React , {useEffect , useState} from 'react'
 import {useParams} from 'react-router-dom'
 import Axios from 'axios'
 import './catalog.scss'
-import {useDispatch , useSelector} from 'react-redux'
+import {useDispatch } from 'react-redux'
 import {Add} from '../../redux/cart/action'
 function Index() {
     let {name} = useParams()
     const [Data , setData] = useState([])
-    const data = useSelector(state => state.cart.data)
-    const saldo = useSelector(state => state.wallet.saldo)
     const dispatch = useDispatch()
+
     useEffect(() => {
         Axios.get(`http://localhost:4000/data/${name}`).then( result => {
             setData(result.data.data)
@@ -40,8 +39,7 @@ function Index() {
                         </div>
                     ))
                 }
-               {JSON.stringify(data)}
-               {"Saldo : " , saldo}
+               
             </div>
             </div>
         </div>

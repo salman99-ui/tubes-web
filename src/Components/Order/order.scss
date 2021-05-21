@@ -8,11 +8,11 @@
         display: grid;
         grid-template-columns: 300px 1fr;
         width: 70%;
-        border: 1px solid red;
+        
 
         .info{
             padding: 10px;
-            border: 1px solid blue;
+            
 
             .identity{
                 display: flex;
@@ -44,7 +44,7 @@
 
         .order-produk{
             padding: 8px 12px;
-            border: 1px solid orange;
+            
 
             .card-produk{
                 display: flex;

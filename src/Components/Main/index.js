@@ -30,7 +30,7 @@ function Index() {
                         <Landing />
                     </Route>
                     <Route path="/home/profile"  >
-                        <Profile />
+                        <Order />
                     </Route>
                     <Route path="/home/catalog/:name"exact>
                         <Catalog />
