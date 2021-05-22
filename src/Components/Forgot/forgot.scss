@@ -1,0 +1,46 @@
+.forgot-container{
+    display: flex;
+    height: 100vh;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .forgot-body{
+        text-align: center;
+        
+        .forgot-main{
+
+        .show{
+            display: block;
+        }
+
+        .hidden{
+            display: none;
+        }
+        input{
+            display: block;
+            padding: 10px;
+            width: 250px;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        span{
+            color: red;
+            margin: 8px 0;
+            display: block;
+        }
+        button{
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background-color: orange;
+        }
+    }
+}
+}

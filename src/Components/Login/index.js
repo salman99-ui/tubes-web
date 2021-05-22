@@ -47,7 +47,7 @@ function Index() {
             }
         })
 
-        console.log(values)
+        
     }
     const classes = Login()
 
@@ -77,7 +77,7 @@ function Index() {
                             {msg => <p style={{color : 'red' , margin : 0}}> {msg}</p>}
                         </ErrorMessage>
                         <p style={{float : 'left'}}><Link to="/register">Dont have account?</Link></p>
-                        <p className={classes.forgot}><Link to="">Forgot Password ?</Link></p>
+                        <p className={classes.forgot}><Link to="/forget">Forgot Password ?</Link></p>
                         <button className={classes.login}>Login</button>
                         
                         </Form>
